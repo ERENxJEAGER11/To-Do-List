@@ -1,23 +1,19 @@
 <!DOCTYPE html>
 <html>
-
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width">
-  <title>To - Do</title>
-  <link href="style.css" rel="stylesheet" type="text/css" />
-</head>
-
-<body>
-  <h3>My List</h3>
-  <script src="script.js"></script>
-  <input type="text" id="my-task" />
-  <button onclick="adTask()">submit</button>
-  <div class="task-list"></div>
-  <!-- This script places a badge on your repl's full-browser view back to your repl's cover page.
-    Try various colors for the theme: dark, light, red, orange, yellow, lime, green, teal, blue, blurple, magenta, pink!
-    -->
- 
-</body>
-
+  <head>
+    <title>To-Do List</title>
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+    <h1>To-Do List</h1>
+    <div class="container">
+    <div class="input-container">
+      <input type="text" id="new-task" placeholder="Add a new task">
+      <button id="add-task">Add Task</button>
+    </div>
+    <ul id="task-list">
+    </ul>
+    </div>
+    <script src="script.js"></script>
+  </body>
 </html>

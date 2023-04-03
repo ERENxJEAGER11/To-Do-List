@@ -1,21 +1,29 @@
-const task = ["aman", "zaheer"];
-const taskList = document.getElementsByClassName("task-list");
-const para = document.createElement("p");
+var addTaskButton = document.getElementById("add-task");
+addTaskButton.addEventListener("click", addTask);
 
-para.innerText = "This is a paragraph.";
+function addTask() {
+  // Get the input field and the task list
+  var input = document.getElementById("new-task");
+  var taskList = document.getElementById("task-list");
 
-document.body.append(taskList.item);
+  // Create a new task item with a delete button
+  var taskItem = document.createElement("li");
+  var taskName = document.createTextNode(input.value);
+  var deleteButton = document.createElement("button");
+  var deleteButtonText = document.createTextNode("Delete");
 
+  deleteButton.appendChild(deleteButtonText);
+  deleteButton.classList.add("delete-button");
+  deleteButton.addEventListener("click", function() {
+    taskList.removeChild(taskItem);
+  });
 
+  taskItem.appendChild(taskName);
+  taskItem.appendChild(deleteButton);
 
-for (let i = 0; i < task.length; i++) {
-  const element = document.createElement("p");
-  element.innerText = task[i];
-  taskList.appendChild(element);
+  // Add the new task item to the task list
+  taskList.appendChild(taskItem);
+
+  // Clear the input field
+  input.value = "";
 }
-
-function adTask() {
-  task.push(document.getElementById("my-task").value);
-  console.log(task);
-}
-
